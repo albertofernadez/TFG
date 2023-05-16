@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>Palas For All</title>
+	<link rel="icon" href="../static/assets/img/logo.png" th:href="@{/assets/img/Logo.png}"/>
+	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+	<link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav" th:fragment="nav-admin">
+		<div class="container">
+			<a class="navbar-brand" th:href="@{/}">Volver</a>
+			
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				Menu
+				<i class="fas fa-bars ms-1"></i>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				
+				<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+					<li class="nav-item"><a class="nav-link" th:href="@{/adminProductos}">Productos</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/adminUsuarios}">Usuarios</a></li>
+					<!--  <li class="nav-item"><a class="nav-link" th:href="@{/adminPedidos}">Pedidos</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/adminEstadisticas}">Estadísticas</a></li>-->
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<section class="page-section bg-light margenb" id="novedades">
+		<div class="container pb-4">
+			<div class="row">
+			
+			    <div class="col">
+    				<a th:href="@{/agregarProducto}" class="btn btn-orange btn-lg text-uppercase margen">Añadir</a>
+    			</div>
+			
+				<div class="col-md-auto">
+					<a class="btn btn-primary" th:href="@{/adminProductos}">MOSTRAR TODO</a>
+    			</div>
+    			
+				
+				
+				<div class="col-md-auto">
+					<a class="navbar-brand" data-bs-toggle="dropdown"> Categoría </a>
+						<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-dark" aria-labelledby="menucategoria">
+							<li><a class="dropdown-item text-white link" th:href="@{/adminPalas}">Palas</a></li>
+						    <li><a class="dropdown-item text-white link" th:href="@{/adminPaleteros}">Paleteros</a></li>
+						</ul>
+    			</div>
+    			
+    			<div class="col-md-auto">
+					<a class="navbar-brand" data-bs-toggle="dropdown"> Marcas </a>
+						<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-dark" aria-labelledby="menuplataforma">
+						    <li><a class="dropdown-item text-white link" th:href="@{/adminAdidas}">Adidas</a></li>
+						    <li><a class="dropdown-item text-white link" th:href="@{/adminBullpadel}">Bull Padel</a></li>
+						    <li><a class="dropdown-item text-white link" th:href="@{/adminBabolat}">Babolat</a></li>
+						    <li><a class="dropdown-item text-white link" th:href="@{/adminDropshot}">Drop Shot</a></li>
+						</ul>
+    			</div>
+    			
+    			<div class="col-md-auto">
+    				<a class="navbar-brand" th:href="@{/adminDescatalogado}">Descatalogado</a>
+    			</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			
+			<table class="table table-hover" th:if="${productos.size() > 0}">
+				<thead>
+			    	<tr>
+			      		<th scope="col">ID</th>
+			      		<th scope="col">Imagen</th>
+			      		<th scope="col">Nombre</th>
+			      		<th scope="col">Descripción</th>
+			      		<th scope="col">Precio</th>
+			      		<th scope="col">Stock</th>
+			      		<th scope="col">Categoría</th>
+			      		<th scope="col">Plataforma</th>
+			      		<th scope="col"></th>
+			    	</tr>
+			  	</thead>	
+			<tbody class="table-group-divider">
+			    	<tr th:each="producto: ${productos}" th:id="'producto-' + ${producto.id_producto}">
+			    		<td th:text="${producto.id_producto}">ID</td>
+			    		<td><img th:src="${producto.foto}" style="max-height: 150px; max-width: 100px"></td>
+	      				<td th:text="${producto.nombre}">Nombre</td>
+	      				<td th:text="${producto.descripcion}">Descripción</td>
+	      				<td th:text="${producto.precio}+€">Precio</td>
+	      				<td th:text="${producto.stock}">Stock</td>
+	      				<td th:text="${producto.categoria.nombre}">Categoría</td>
+	      				<td th:text="${producto.plataforma.nombre}">Plataforma</td>
+				  		<td th:if="${producto.descatalogado == 0}">
+							<a th:href="@{/modificarProducto/{id}(id=${producto.id_producto}, page=${currentPage})}" class="btn btn-primary text-uppercase d-block">Editar</a>
+				  			<a th:onclick="eliminarProducto([[${producto.id_producto}]])" class="btn btn-danger text-uppercase d-block">Eliminar</a>
+				  		</td>
+			    	</tr>
+			  </tbody>
+			</table>
+			
+			<h1 class="text-center mt-5" th:if="${productos.size() < 1}">No se encontraron productos.</h1>
+
+
+			<div class="ms-3" th:if="${productos.size() > 0}">
+
+				<div class = "row col-sm-12 justify-content-center align-items-center">
+
+					<hr class="border border-1 opacity-100">
+
+					<div class = "col-sm-3">
+						Total Productos: <a th:text="${totalProductos}"></a>
+					</div>
+
+					<div class = "col-sm-3">
+						<th:block th:if="${productosPage.hasPrevious()}">
+							<a th:href="@{${#httpServletRequest.requestURI}(page=${productosPage.previousPageable().pageNumber})}">
+								<span class="p-4">Anterior</span>
+							</a>
+						</th:block>
+					</div>
+
+					<div class = "col-sm-2" >
+						<th:block th:each="i : ${#numbers.sequence(0, productosPage.totalPages - 1)}">
+							<a th:href="@{${#httpServletRequest.requestURI}(page=${i})}" th:text="${i+1}"
+							   th:class="${i == productosPage.number ? 'active' : ''}">
+							</a>
+						</th:block>
+					</div>
+
+					<div class="col-sm-2">
+						<th:block th:if="${productosPage.hasNext()}">
+							<a th:href="@{${#httpServletRequest.requestURI}(page=${productosPage.nextPageable().pageNumber})}">
+								<span class="p-4">Siguiente</span>
+							</a>
+						</th:block>
+					</div>
+
+					<p></p><hr class="border border-1 opacity-100">
+
+				</div>
+
+			</div>
+
+		</div>
+			
+	</section>
+	
+				
+	<footer th:replace="index :: footer"></footer>
+
+	<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+	<script type="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+	<script src="js/scripts.js"></script>
+	<script src="js/admin.js"></script>
+</body>
+
+</html>

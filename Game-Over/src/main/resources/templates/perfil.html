@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>Palas For All</title>
+	<link rel="icon" href="../static/assets/img/logo.png" th:href="@{/assets/img/Logo.png}"/>
+	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+	<link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+
+	<nav th:replace="categoria :: header"></nav>
+	
+	
+	    <div class="container margenc" th:each="cliente : ${clientes}">
+			<div class="row ">
+	          
+			
+				<div class="col-sm-8 ">
+					<ul class="nav nav-tabs margenc ms-5" id="myTab" role="tablist">
+						<li class="nav-item" role="presentation">
+					    	<button class="btn btn-primary " id="perfil-tab" data-bs-toggle="tab" data-bs-target="#perfil" type="button" role="tab" aria-controls="perfil" aria-selected="true">PERFIL</button>
+					  	</li>
+					  	<li class="nav-item" role="presentation">
+					    	<button class="btn btn-primary ms-3" id="profile-tab" data-bs-toggle="tab" data-bs-target="#pedidos" type="button" role="tab" aria-controls="pedidos" aria-selected="false">PEDIDOS</button>
+					  	</li>
+					  	
+					  	<li class="tab-content ms-5 " id="myTabContent" role="presentation">
+					    	<a class="btn btn-dark" th:href="@{/modificarPerfil/}+${cliente.id}">
+					    	<button class="btn btn-dark" th:href="@{/modificarPerfil/}+${cliente.id}"  data-bs-toggle="tab" data-bs-target="#deseados" type="button" role="tab" aria-controls="deseados" aria-selected="false">Modificar Datos</button>
+					    </a>
+					  	</li>
+					</ul>
+					
+					
+							<div>
+								<h5>Nombre</h5>
+								<p th:text="${cliente.nombre}"></p>
+								<h5>Apellidos</h5>
+								<p th:text="${cliente.apellido}"></p>
+								<h5>Correo</h5>
+								<p th:text="${cliente.email}"></p>
+							</div>				
+								
+							<div>
+								<h5>Dirección</h5>
+								<p th:text="${cliente.direccion}"></p>
+								<h5>DNI</h5>
+								<p th:text="${cliente.dni}"></p>
+							</div>
+						</div>
+						
+						
+					  	<div class="tab-pane fade show ms-5 mt-3 mb-3" id="pedidos" role="tabpanel" aria-labelledby="pedidos-tab" style="position: relative;">
+					  		<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">Nº Orden</th>
+										<th scope="col">Pedido</th>
+										<th scope="col">Entrega</th>
+										<th scope="col">Dirección</th>
+										<th scope="col">Cantidad</th>
+										<th scope="col">Total</th>
+										<th scope="col"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="orden: ${ordenes}">
+										<td th:text="${orden.numero}"></td>
+										<td th:text="${orden.fechaCreacion}"></td>
+										<td th:text="${orden.fechaCreacion}"></td>
+										<td th:text="${orden.direccion}"></td>
+										<td th:text="${orden.cantidad}"></td>
+										<td th:text="${orden.total}+€"></td>
+										<td><a th:href="@{/detalle/{id} (id=${orden.id}) }" class="btn btn-primary">Detalles</a></td>
+									</tr>
+								</tbody>
+							</table>
+					  	
+					  	</div>
+					  	
+					  	
+					</div>
+				 </div>
+			</div>
+		</div>
+	
+	
+	<div class="container p-4 visually-hidden">
+
+		<div class="cositas bg-light pt-4 border border-4">
+
+			<h2 class="text-center">Tus datos:</h2>
+
+			<th:block th:each="cliente : ${clientes}">
+				<div class="p-4 pb-2">
+					<b>Correo electrónico:</b>
+					<p th:text="${cliente.email}"></p>
+					<b>Nombre:</b>
+					<p th:text="${cliente.nombre}"></p>
+					<b>Apellidos:</b>
+					<p th:text="${cliente.apellido}"></p>
+					<b>Dirección:</b>
+					<p th:text="${cliente.direccion}"></p>
+					<b>DNI:</b>
+					<p th:text="${cliente.dni}"></p>
+				</div>
+
+				<div class="text-center pb-4">
+					
+				</div>
+			</th:block>
+			<h2 class="text-center">Tus compras:</h2>
+						<div class="card m-3">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-lg-12">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<p class="text-center"><a class="btn btn-primary w-25" type="button" th:href="@{/}">VOLVER</a></p>
+		</div>
+	
+	</div>
+
+	<footer th:replace="index :: footer"></footer>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script th:src="@{/js/scripts.js}"></script>
+	<script th:src="@{/js/avatares.js}"></script>
+	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>

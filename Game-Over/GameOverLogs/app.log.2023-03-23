@@ -1,0 +1,36 @@
+[2023-03-21 12:57:21,672] http-nio-8080-exec-4 com.registro.usuarios.controlador.RegistroControlador 133 INFO   - Visitada página: accesorios.
+[2023-03-21 12:57:26,738] http-nio-8080-exec-4 com.registro.usuarios.controlador.RegistroControlador 133 INFO   - Visitada página: accesorios.
+[2023-03-21 12:57:29,110] http-nio-8080-exec-4 com.registro.usuarios.controlador.RegistroControlador 124 INFO   - Visitada página: videojuegos.
+[2023-03-21 12:57:52,976] http-nio-8080-exec-7 com.registro.usuarios.controlador.RegistroControlador 124 INFO   - Visitada página: videojuegos.
+[2023-03-21 13:18:48,036] http-nio-8080-exec-3 com.registro.usuarios.controlador.RegistroControlador 129 INFO   - Visitada página: videojuegos.
+[2023-03-21 13:19:19,336] http-nio-8080-exec-3 com.registro.usuarios.controlador.RegistroControlador 159 INFO   - Se ha seleccionado el producto con id: 1
+[2023-03-21 13:25:08,323] http-nio-8080-exec-2 com.registro.usuarios.controlador.RegistroControlador 159 INFO   - Se ha seleccionado el producto con id: 1
+[2023-03-21 13:25:56,074] http-nio-8080-exec-1 com.registro.usuarios.controlador.RegistroControlador 168 INFO   - Se ha actualizado el producto con id: 1
+[2023-03-21 13:28:24,355] http-nio-8080-exec-1 com.registro.usuarios.controlador.RegistroControlador 159 INFO   - Se ha seleccionado el producto con id: 1
+[2023-03-21 13:28:29,521] http-nio-8080-exec-4 com.registro.usuarios.controlador.RegistroControlador 172 INFO   - Se ha actualizado el producto con id: 1
+[2023-03-21 13:29:29,878] http-nio-8080-exec-1 com.registro.usuarios.controlador.RegistroControlador 159 INFO   - Se ha seleccionado el producto con id: 1
+[2023-03-21 13:30:02,221] http-nio-8080-exec-10 com.registro.usuarios.controlador.RegistroControlador 194 INFO   - Se ha creado un nuevo producto: szdcx
+[2023-03-21 13:30:33,470] http-nio-8080-exec-4 com.registro.usuarios.controlador.RegistroControlador 159 INFO   - Se ha seleccionado el producto con id: 40
+[2023-03-21 13:30:39,533] http-nio-8080-exec-1 com.registro.usuarios.controlador.RegistroControlador 172 INFO   - Se ha actualizado el producto con id: 40
+[2023-03-21 13:30:50,017] http-nio-8080-exec-9 com.registro.usuarios.controlador.RegistroControlador 197 INFO   - Se ha creado un nuevo producto: <zx<<zx
+[2023-03-21 13:30:56,673] http-nio-8080-exec-5 com.registro.usuarios.controlador.RegistroControlador 179 INFO   - Se ha eliminado el producto con id: 41
+[2023-03-21 13:30:59,672] http-nio-8080-exec-3 com.registro.usuarios.controlador.RegistroControlador 179 INFO   - Se ha eliminado el producto con id: 40
+[2023-03-23 09:43:36,034] http-nio-8090-exec-3 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 09:55:52,813] http-nio-8090-exec-3 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:36:08,883] http-nio-8090-exec-3 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:36:17,732] http-nio-8090-exec-9 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:36:33,135] http-nio-8090-exec-3 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:40:00,213] http-nio-8090-exec-10 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:42:50,421] http-nio-8090-exec-9 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:42:54,077] http-nio-8090-exec-8 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:48:27,744] http-nio-8090-exec-2 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:48:34,764] http-nio-8090-exec-8 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:48:38,156] http-nio-8090-exec-10 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:48:40,864] http-nio-8090-exec-5 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:48:51,362] http-nio-8090-exec-4 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:48:58,113] http-nio-8090-exec-4 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:49:48,372] http-nio-8090-exec-3 com.registro.usuarios.controlador.RegistroControlador 158 INFO   - Visitada página: accesorios.
+[2023-03-23 10:53:47,489] http-nio-8090-exec-3 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:54:00,219] http-nio-8090-exec-8 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.
+[2023-03-23 10:54:04,764] http-nio-8090-exec-2 com.registro.usuarios.controlador.RegistroControlador 158 INFO   - Visitada página: accesorios.
+[2023-03-23 10:54:08,916] http-nio-8090-exec-5 com.registro.usuarios.controlador.RegistroControlador 149 INFO   - Visitada página: videojuegos.

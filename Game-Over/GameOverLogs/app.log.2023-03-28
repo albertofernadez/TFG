@@ -1,0 +1,9 @@
+[2023-03-28 09:30:36,662] http-nio-8080-exec-4 com.registro.usuarios.controlador.RegistroControlador 160 INFO   - Visitada página: videojuegos.
+[2023-03-28 09:30:39,332] http-nio-8080-exec-6 com.registro.usuarios.controlador.RegistroControlador 169 INFO   - Visitada página: accesorios.
+[2023-03-28 09:30:41,366] http-nio-8080-exec-6 com.registro.usuarios.controlador.RegistroControlador 178 INFO   - Visitada página: electrónica.
+[2023-03-28 09:34:46,883] http-nio-8080-exec-1 com.registro.usuarios.controlador.RegistroControlador 200 INFO   - Visitada página: electrónica.
+[2023-03-28 10:47:02,933] http-nio-8080-exec-5 com.registro.usuarios.controlador.RegistroControlador 182 INFO   - Visitada página: videojuegos.
+[2023-03-28 10:47:26,305] http-nio-8080-exec-6 com.registro.usuarios.controlador.RegistroControlador 182 INFO   - Visitada página: videojuegos.
+[2023-03-28 10:50:25,959] http-nio-8080-exec-3 com.registro.usuarios.controlador.RegistroControlador 170 INFO   - Visitada página: videojuegos.
+[2023-03-28 10:50:32,291] http-nio-8080-exec-1 com.registro.usuarios.controlador.RegistroControlador 179 INFO   - Visitada página: accesorios.
+[2023-03-28 10:50:35,461] http-nio-8080-exec-1 com.registro.usuarios.controlador.RegistroControlador 188 INFO   - Visitada página: electrónica.

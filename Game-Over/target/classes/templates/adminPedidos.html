@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>Palas For All</title>
+	<link rel="icon" href="../static/assets/img/logo.png" th:href="@{/assets/img/Logo.png}"/>
+	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+	<link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav" th:replace="adminProductos :: nav-admin"></nav>
+
+
+	<section class="page-section bg-light margenb" id="novedades">
+		
+		<div class="container">
+			
+			<table class="table table-hover">
+				<thead>
+			    	<tr>
+			      		<th scope="col">Identificador</th>
+			      		<th scope="col">Usuario</th>
+			      		<th scope="col">Fecha de pedido</th>
+			      		<th scope="col">Fecha de entrega</th>
+			      		<th scope="col">Cantidad</th>
+			      		<th scope="col">Total</th>
+			    	</tr>
+			  	</thead>	
+			<tbody class="table-group-divider">
+			    	<tr th:each="pedido: ${pedidos}">
+			    		<td th:text="${pedido.numero}">ID</td>
+			    		<td th:text="${pedido.usuario.email}">Stock</td>
+	      				<td th:text=${pedido.fechaCreacion}>Nombre</td>
+	      				<td th:text="${pedido.fechaRecibida}">Descripción</td>
+	      				<td th:text="${pedido.cantidad}">Cantidad</td>
+	      				<td th:text="${pedido.total}+€">Precio</td>
+			    	</tr>
+			  </tbody>
+			</table>
+			
+			
+
+	<footer th:replace="index :: footer"></footer>
+
+	<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+	<script type="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+	<script src="js/scripts.js"></script>
+	<script src="js/admin.js"></script>
+</body>
+
+</html>

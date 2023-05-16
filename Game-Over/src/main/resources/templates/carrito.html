@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>Palas For All</title>
+	<link rel="icon" href="../static/assets/img/logo.png" th:href="@{/assets/img/Logo.png}"/>
+	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+	<link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+
+	<nav th:replace="categoria :: header"></nav>
+
+	<div class="container margend">
+		<h2>Carrito</h2>
+		
+
+		<div class="card mb-3" style="width: 50vw">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="card-body">
+
+				        <h5 class="card-title" >TOTAL: <span th:text="${orden.total}+€"></span></h5>
+				    	<a th:href="@{orden}"  th:classappend ="${ orden.cantidad == 0 }  ?    ' disabled' :  'btn-dark' "  class="btn "  >
+				    			Comprar
+				    	</a>
+				      </div>
+				    </div>
+					<div class="col-md-5 mt-3">
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div th:each="dorden:${carrito}">
+				<div class="card mb-3" style="width: 50vw">
+					<div class="row">
+						<div class="col-md-2">
+							<img th:src="${dorden.foto}" class="img-fluid rounded-start"
+								style="max-height: 150px; max-width: 230px">
+						</div>
+						<div class="col-md-5">
+							<div class="card-body">
+								<h5 class="card-title" th:text="${dorden.nombre}"></h5>
+								<p class="card-text text-muted" th:text="${dorden.precio}+€"></p>
+								<span th:if="${dorden.producto.stock >= 10}"></span>
+								<span th:if="${dorden.producto.stock < 10 && dorden.producto.stock > 1}"><p th:text="'Quedan '+${dorden.producto.stock}+' Artículos'"></p></span>
+								<span th:if="${dorden.producto.stock == 1}"><p th:text="'Queda '+${dorden.producto.stock}+' Artículo'"></p></span>
+							<span th:if="${dorden.producto.stock <= 0}">No quedan artículos</span>
+							</div>
+						</div>
+						<div class="col-md-5 mt-3">
+							<a th:href="@{/delete/cart/{id}   (id=${dorden.producto.id_producto}) }" ><button
+									class="btn btn-primary me-3">Borrar</button></a> <a
+								th:href="@{/restar/cart/{id}   (id=${dorden.producto.id_producto}) }"><button
+									class="btn btn-primary">-</button></a> <input class="text-center"
+								style="width: 30px; height: 38px" th:value="${dorden.cantidad}" readonly>
+							<a th:href="${dorden.producto.stock <= 0} ? '#' : @{/sumar/cart/{id}(id=${dorden.producto.id_producto})}"><button
+									class="btn btn-primary" th:classappend="${dorden.producto.stock <= 0} ? 'disabled btn-danger' : ' '">
+									<span th:if="${dorden.producto.stock > 0}">+</span><span th:if="${dorden.producto.stock <= 0}">X</span></button></a>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<a class="btn btn-primary" type="button" th:href="@{/}"> Seguir
+				comprando </a>
+				<!--   <a class="btn btn-primary mt-2" type="button"
+				th:href="@{/order}"> Resumen orden </a>-->
+		</div>
+
+
+
+	</div>
+
+
+
+	<footer th:replace="index :: footer"></footer>
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script th:src="@{/js/scripts.js}"></script>
+	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>
